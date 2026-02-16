@@ -3,434 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noire Restaurant - ექსკლუზიური სამზარეულო</title>
+    <title>Noire Restaurant | პრემიუმ კულინარია</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Noto+Serif+Georgian:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Header -->
+<body data-page="home">
     <header class="header" id="header">
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <div class="logo">
-                        <i class="fas fa-utensils"></i>
-                        <span>Noire</span>
-                    </div>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#home" class="nav-link active">მთავარი</a></li>
-                        <li><a href="#menu" class="nav-link">მენიუ</a></li>
-                        <li><a href="#about" class="nav-link">ჩვენს შესახებ</a></li>
-                        <li><a href="#gallery" class="nav-link">გალერეა</a></li>
-                        <li><a href="#contact" class="nav-link">კონტაქტი</a></li>
-                    </ul>
-                    <div class="nav-right">
-                        <a href="https://www.instagram.com/ni.kaa770/" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <button class="reservation-btn">დაჯავშნა</button>
-                        <div class="hamburger" id="hamburger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
+        <div class="container nav-shell">
+            <a href="index.html#home" class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Noire</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="მენიუს გახსნა" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">მთავარი</a>
+                <a href="#menu" class="nav-link">მენიუ</a>
+                <a href="#about" class="nav-link">ჩვენს შესახებ</a>
+                <a href="#reservation" class="nav-link">დაჯავშნა</a>
+                <a href="#contact" class="nav-link">კონტაქტი</a>
+                <button class="btn btn-accent nav-reserve" data-scroll="#reservation">მაგიდის დაჯავშნა</button>
+                <div class="nav-auth">
+                    <a href="login.html" class="nav-auth-link" data-auth-guest>შესვლა</a>
+                    <a href="register.html" class="nav-auth-link" data-auth-guest>რეგისტრაცია</a>
+                    <a href="profile.html" class="user-mini" data-user-chip hidden>
+                        <img src="https://via.placeholder.com/80x80/1f1f1f/c9a44a?text=N" alt="მომხმარებელი" data-user-chip-img>
+                        <span data-user-chip-name>მომხმარებელი</span>
+                    </a>
+                    <button class="nav-auth-link logout-link" data-logout hidden>გასვლა</button>
                 </div>
-            </div>
-        </nav>
+            </nav>
+            <button class="nav-overlay" id="navOverlay" aria-label="მენიუს დახურვა"></button>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-line">გემოვნების</span>
-                <span class="title-line">ხელოვნება</span>
-            </h1>
-            <p class="hero-subtitle">ექსკლუზიური კულინარიული გამოცდილება თბილისის გულში</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary">დაჯავშნე ადგილი</button>
-                <button class="btn btn-secondary">იხილე მენიუ</button>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section class="menu-section" id="menu">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">ჩვენი მენიუ</span>
-                <h2 class="section-title">ექსკლუზიური კერძები</h2>
-                <p class="section-description">თითოეული კერძი არის ხელოვნების ნაწარმოები</p>
-            </div>
-
-            <div class="menu-tabs">
-                <button class="menu-tab active" data-category="all">ყველა</button>
-                <button class="menu-tab" data-category="starters">სალათები</button>
-                <button class="menu-tab" data-category="main">მთავარი კერძები</button>
-                <button class="menu-tab" data-category="desserts">დესერტები</button>
-            </div>
-
-            <div class="menu-grid">
-                <div class="menu-card" data-category="starters">
-                    <div class="menu-card-image">
-                        <div class="menu-image-placeholder">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>ცეზარის სალათი</h3>
-                            <span class="price">28₾</span>
-                        </div>
-                        <p class="menu-description">ახალი სალათის ფოთლები, პარმეზანი, კრუტონები და ავთორული სოუსი</p>
-                        <div class="menu-card-footer">
-                            <span class="menu-tag"><i class="fas fa-clock"></i> 10 წთ</span>
-                            <button class="order-btn">შეკვეთა</button>
-                        </div>
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-grid-bg"></div>
+            <div class="container hero-layout">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Noire Signature Dining</p>
+                    <h1>პრემიუმ მუქი ესთეტიკის გასტრონომიული გამოცდილება.</h1>
+                    <p class="hero-text">აღმოაჩინე დახვეწილი კერძები, შთამბეჭდავი ატმოსფერო და უმაღლესი დონის სერვისი ქალაქის გულში.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-accent" data-scroll="#reservation">დაჯავშნე ახლავე</button>
+                        <button class="btn btn-ghost" data-scroll="#menu">იხილე მენიუ</button>
                     </div>
                 </div>
-
-                <div class="menu-card" data-category="main">
-                    <div class="menu-card-image">
-                        <div class="menu-image-placeholder">
-                            <i class="fas fa-drumstick-bite"></i>
-                        </div>
+                <div class="hero-banner reveal" id="heroBannerSlider">
+                    <div class="banner-track" id="bannerTrack">
+                        <article class="banner-card">
+                            <div class="banner-icon"><i class="fa-solid fa-star"></i></div>
+                            <h3>შეფის სადეგუსტაციო კვირა</h3>
+                            <p>შვიდკერძიანი სეზონური სეტი ღვინის შეხამებით.</p>
+                            <span>ადგილები შეზღუდულია</span>
+                        </article>
+                        <article class="banner-card">
+                            <div class="banner-icon"><i class="fa-solid fa-wine-glass"></i></div>
+                            <h3>ღამის ლაუნჯი</h3>
+                            <p>ცოცხალი აკუსტიკა და საფირმო კოქტეილები 22:00-ის შემდეგ.</p>
+                            <span>პარ - კვ</span>
+                        </article>
+                        <article class="banner-card">
+                            <div class="banner-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                            <h3>კერძო საღამოები</h3>
+                            <p>ინდივიდუალურად დაგეგმილი სივრცე განსაკუთრებული შეხვედრებისთვის.</p>
+                            <span>შეკვეთით</span>
+                        </article>
                     </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>ტრუფელით გაშენებული სტეიკი</h3>
-                            <span class="price">89₾</span>
-                        </div>
-                        <p class="menu-description">პრემიუმ ხარის ხორცი, შავი ტრუფელი და ბოსტნეული</p>
-                        <div class="menu-card-footer">
-                            <span class="menu-tag"><i class="fas fa-fire"></i> Hot</span>
-                            <button class="order-btn">შეკვეთა</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-card" data-category="main">
-                    <div class="menu-card-image">
-                        <div class="menu-image-placeholder">
-                            <i class="fas fa-fish"></i>
-                        </div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>ორაგულის ფილე ლიმონით</h3>
-                            <span class="price">75₾</span>
-                        </div>
-                        <p class="menu-description">ახალი ორაგული, მედიტერანული სანელებლები და ლიმონის სოუსი</p>
-                        <div class="menu-card-footer">
-                            <span class="menu-tag"><i class="fas fa-star"></i> Popular</span>
-                            <button class="order-btn">შეკვეთა</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-card" data-category="desserts">
-                    <div class="menu-card-image">
-                        <div class="menu-image-placeholder">
-                            <i class="fas fa-ice-cream"></i>
-                        </div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>შოკოლადის ფონდანი</h3>
-                            <span class="price">32₾</span>
-                        </div>
-                        <p class="menu-description">თბილი შოკოლადის ნაცხი თხევადი შიგთავსით და ვანილის ნაყინი</p>
-                        <div class="menu-card-footer">
-                            <span class="menu-tag"><i class="fas fa-heart"></i> Chef's Choice</span>
-                            <button class="order-btn">შეკვეთა</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-card" data-category="starters">
-                    <div class="menu-card-image">
-                        <div class="menu-image-placeholder">
-                            <i class="fas fa-pepper-hot"></i>
-                        </div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>ბრუსკეტა ასორტი</h3>
-                            <span class="price">24₾</span>
-                        </div>
-                        <p class="menu-description">სამი სახეობის ბრუსკეტა მოზარელას, ატამითა და პესტოს</p>
-                        <div class="menu-card-footer">
-                            <span class="menu-tag"><i class="fas fa-users"></i> Sharing</span>
-                            <button class="order-btn">შეკვეთა</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="menu-card" data-category="desserts">
-                    <div class="menu-card-image">
-                        <div class="menu-image-placeholder">
-                            <i class="fas fa-birthday-cake"></i>
-                        </div>
-                    </div>
-                    <div class="menu-card-content">
-                        <div class="menu-card-header">
-                            <h3>ტირამისუ</h3>
-                            <span class="price">28₾</span>
-                        </div>
-                        <p class="menu-description">კლასიკური იტალიური დესერტი მასკარპონეთა და ესპრესოთი</p>
-                        <div class="menu-card-footer">
-                            <span class="menu-tag"><i class="fas fa-coffee"></i> Classic</span>
-                            <button class="order-btn">შეკვეთა</button>
-                        </div>
+                    <div class="banner-controls" aria-label="სლაიდერის კონტროლები">
+                        <button class="banner-dot active" data-slide="0" aria-label="პირველი ბანერი"></button>
+                        <button class="banner-dot" data-slide="1" aria-label="მეორე ბანერი"></button>
+                        <button class="banner-dot" data-slide="2" aria-label="მესამე ბანერი"></button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="about-image-wrapper">
-                        <div class="about-placeholder">
-                            <i class="fas fa-concierge-bell"></i>
-                        </div>
-                    </div>
-                    <div class="about-badge">
-                        <span class="badge-number">12+</span>
-                        <span class="badge-text">წლის გამოცდილება</span>
-                    </div>
+        <section class="section" id="menu">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">რჩეული შეთავაზება</p>
+                    <h2>მენიუს გამორჩეული პოზიციები</h2>
                 </div>
-                <div class="about-content">
-                    <span class="section-label">ჩვენს შესახებ</span>
-                    <h2 class="section-title">სადაც ხდება<br>გემოს შეხვედრა</h2>
-                    <p class="about-text">
-                        Noire არის სადაც ტრადიციული ქართული სამზარეულო ხვდება თანამედროვე კულინარიულ ხელოვნებას. ჩვენი გუნდი შექმნილია საუკეთესო შეფ-მზარეულებისგან, რომლებიც თითოეულ კერძში აჯადოებენ თავიანთ გატეხილ ოსტატობას.
-                    </p>
-                    <p class="about-text">
-                        ჩვენ ვიყენებთ მხოლოდ სეზონურ და ადგილობრივ პროდუქტებს, რათა უზრუნველვყოთ თითოეული კერძის უმაღლესი ხარისხი და ავთენტურობა.
-                    </p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>პრემიუმ ხარისხი</h4>
-                                <p>მხოლოდ საუკეთესო ინგრედიენტები</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>გამოცდილი გუნდი</h4>
-                                <p>პროფესიონალი შეფ-მზარეულები</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>სიყვარულით შექმნილი</h4>
-                                <p>თითოეული კერძი ხელოვნებაა</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="menu-tabs reveal">
+                    <button class="menu-tab active" data-category="all">ყველა</button>
+                    <button class="menu-tab" data-category="starter">სთართერი</button>
+                    <button class="menu-tab" data-category="main">მთავარი</button>
+                    <button class="menu-tab" data-category="dessert">დესერტი</button>
+                </div>
+                <div class="menu-grid">
+                    <article class="menu-card reveal" data-category="starter">
+                        <h3>ტრიუფელის ბურატა</h3>
+                        <p>შებოლილი პომიდორი, ბაზილიკის მარგალიტი და დაძველებული ბალზამიკო.</p>
+                        <div class="meta"><span>სთართერი</span><strong>$24</strong></div>
+                    </article>
+                    <article class="menu-card reveal" data-category="main">
+                        <h3>Charcoal Ribeye</h3>
+                        <p>პრემიუმ საქონლის სტეიკი, ძვლის ტვინის კარაქი და ბოსტნეულის გლეიზი.</p>
+                        <div class="meta"><span>მთავარი</span><strong>$56</strong></div>
+                    </article>
+                    <article class="menu-card reveal" data-category="main">
+                        <h3>ზაფრანიანი ზღვის ბასი</h3>
+                        <p>ციტრუსის ესპუმა, ფენელის არომატი და ოქროსფერი ზეთი.</p>
+                        <div class="meta"><span>მთავარი</span><strong>$48</strong></div>
+                    </article>
+                    <article class="menu-card reveal" data-category="dessert">
+                        <h3>შოკოლადის სფერა</h3>
+                        <p>თბილი განაში, თხილის კრამბლი და ვანილის არომატი.</p>
+                        <div class="meta"><span>დესერტი</span><strong>$18</strong></div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">გალერეა</span>
-                <h2 class="section-title">ვიზუალური მოგზაურობა</h2>
-                <p class="section-description">ჩვენი კერძების და ატმოსფეროს აღმაფრთოვანებელი სამყარო</p>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span>რესტორნის ინტერიერი</span>
+        <section class="section alt" id="about">
+            <div class="container split">
+                <div class="panel reveal">
+                    <p class="eyebrow">რატომ Noire</p>
+                    <h2>თანამედროვე ელეგანტურობა, კლასიკური სული.</h2>
+                    <p>Noire-ში ინგრედიენტები ადგილობრივად ირჩევა, ტექნიკა მსოფლიო კულინარიული ტენდენციებით არის შთაგონებული, ხოლო თითოეული დეტალი იდეალური საღამოსთვისაა შექმნილი.</p>
+                    <div class="pill-row">
+                        <span>12+ წელი</span>
+                        <span>სეზონური მენიუ</span>
+                        <span>სომელიეს შეხამება</span>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-utensils"></i>
-                        <span>სპეციალური კერძები</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-wine-glass"></i>
-                        <span>ღვინის კოლექცია</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-cocktail"></i>
-                        <span>სპეციალური კოქტეილები</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-cheese"></i>
-                        <span>დესერტები</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-chef"></i>
-                        <span>ჩვენი გუნდი</span>
-                    </div>
+                <div class="about-banner reveal">
+                    <div class="glow-orb"></div>
+                    <i class="fa-solid fa-champagne-glasses"></i>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-label">დაგვიკავშირდით</span>
-                    <h2 class="section-title">მოგვწერეთ ან<br>მოგვინახულეთ</h2>
-                    <p class="contact-text">
-                        ჩვენ ყოველთვის მზად ვართ მოგესმინოთ და გაგიზიაროთ საუკეთესო კულინარიული გამოცდილება.
-                    </p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-content">
-                                <h4>მისამართი</h4>
-                                <p>რუსთაველის 45, თბილისი, საქართველო</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-content">
-                                <h4>ტელეფონი</h4>
-                                <p>+995 555 123 456</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-content">
-                                <h4>სამუშაო საათები</h4>
-                                <p>ორშ-კვ: 12:00 - 23:00<br>პარ-შაბ: 12:00 - 01:00</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-instagram"></i>
-                            </div>
-                            <div class="contact-content">
-                                <h4>Instagram</h4>
-                                <a href="https://www.instagram.com/ni.kaa770/" target="_blank" class="instagram-link">
-                                    @ni.kaa770
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <section class="section" id="reservation">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">დაჯავშნე სწრაფად</p>
+                    <h2>დაჯავშნის სისტემა</h2>
                 </div>
-
-                <div class="contact-map">
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <h3>მალე ხელმისაწვდომი</h3>
-                            <p>ინტერაქტიული რუქა მალე დაემატება</p>
-                            <div class="map-badge">მალე</div>
+                <div class="reservation-layout">
+                    <form class="card-form reveal" id="reservationForm">
+                        <div class="form-grid">
+                            <label>
+                                სახელი
+                                <input type="text" id="resName" required placeholder="დაჯავშნის სახელი">
+                            </label>
+                            <label>
+                                სტუმრების რაოდენობა
+                                <input type="number" id="resGuests" required min="1" max="20" placeholder="2">
+                            </label>
+                            <label>
+                                თარიღი
+                                <input type="date" id="resDate" required>
+                            </label>
+                            <label>
+                                დრო
+                                <input type="time" id="resTime" required>
+                            </label>
+                            <label class="full-width">
+                                შენიშვნა
+                                <textarea id="resNotes" rows="3" placeholder="გაქვთ დიეტური მოთხოვნა ან განსაკუთრებული სურვილი?"></textarea>
+                            </label>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <i class="fas fa-utensils"></i>
-                        <span>Noire Restaurant</span>
-                    </div>
-                    <p class="footer-description">
-                        ექსკლუზიური კულინარიული გამოცდილება თბილისის გულში.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/ni.kaa770/" target="_blank" class="footer-social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="footer-social-link">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>სწრაფი ბმულები</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">მთავარი</a></li>
-                        <li><a href="#menu">მენიუ</a></li>
-                        <li><a href="#about">ჩვენს შესახებ</a></li>
-                        <li><a href="#gallery">გალერეა</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>ინფორმაცია</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">დაჯავშნა</a></li>
-                        <li><a href="#">ფასები</a></li>
-                        <li><a href="#">კარიერა</a></li>
-                        <li><a href="#">კონტაქტი</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>სიახლეები</h4>
-                    <p class="footer-newsletter-text">გამოიწერეთ და მიიღეთ სიახლეები პირველებმა</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="თქვენი ელ-ფოსტა" required>
-                        <button type="submit">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+                        <button type="submit" class="btn btn-accent full">დაჯავშნის დადასტურება</button>
+                        <p class="status" id="reservationStatus"></p>
                     </form>
+                    <aside class="reservation-list reveal">
+                        <h3>მომავალი ჯავშნები</h3>
+                        <ul id="reservationItems"></ul>
+                    </aside>
                 </div>
             </div>
+        </section>
 
-            <div class="footer-bottom">
-                <p>&copy; 2024 Noire Restaurant. ყველა უფლება დაცულია.</p>
+        <section class="section alt" id="contact">
+            <div class="container split">
+                <div class="panel reveal">
+                    <p class="eyebrow">კონტაქტი</p>
+                    <h2>ეწვიე Noire-ს დღესვე</h2>
+                    <p>რუსთაველის გამზირი 45, თბილისი</p>
+                    <p>+995 555 123 456</p>
+                    <p>ორშ - ხუთ: 12:00 - 23:00 | პარ - კვ: 12:00 - 01:00</p>
+                </div>
+                <div class="panel reveal">
+                    <p class="eyebrow">გამოგვყევი</p>
+                    <h2>@ni.kaa770</h2>
+                    <p>იხილე სიახლეები, კულისებს მიღმა მომენტები და სეზონური განცხადებები.</p>
+                    <a href="https://www.instagram.com/ni.kaa770/" class="btn btn-ghost inline" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-row">
+            <p>&copy; 2026 Noire Restaurant. ყველა უფლება დაცულია.</p>
+            <div class="footer-links">
+                <a href="register.html">რეგისტრაცია</a>
+                <a href="login.html">შესვლა</a>
+                <a href="profile.html">პროფილი</a>
             </div>
         </div>
     </footer>

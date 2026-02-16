@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პროფილი | Noire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Noto+Serif+Georgian:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="profile">
+    <header class="header" id="header">
+        <div class="container nav-shell">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Noire</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="მენიუს გახსნა" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html#home" class="nav-link">მთავარი</a>
+                <a href="index.html#reservation" class="nav-link">დაჯავშნა</a>
+                <a href="login.html" class="nav-link">შესვლა</a>
+                <a href="register.html" class="nav-link">რეგისტრაცია</a>
+                <a href="profile.html" class="nav-link active">პროფილი</a>
+                <div class="nav-auth">
+                    <a href="login.html" class="nav-auth-link" data-auth-guest>შესვლა</a>
+                    <a href="register.html" class="nav-auth-link" data-auth-guest>რეგისტრაცია</a>
+                    <a href="profile.html" class="user-mini" data-user-chip hidden>
+                        <img src="https://via.placeholder.com/80x80/1f1f1f/c9a44a?text=N" alt="მომხმარებელი" data-user-chip-img>
+                        <span data-user-chip-name>მომხმარებელი</span>
+                    </a>
+                    <button class="nav-auth-link logout-link" data-logout hidden>გასვლა</button>
+                </div>
+            </nav>
+            <button class="nav-overlay" id="navOverlay" aria-label="მენიუს დახურვა"></button>
+        </div>
+    </header>
+
+    <main class="section profile-main">
+        <div class="container">
+            <div class="section-head reveal visible">
+                <p class="eyebrow">შენი სივრცე</p>
+                <h2>მომხმარებლის პროფილი</h2>
+            </div>
+            <div class="profile-login-warning card-form" id="profileLoginWarning" hidden>
+                <p>პროფილის სანახავად და რედაქტირებისთვის საჭიროა ავტორიზაცია.</p>
+                <a class="btn btn-accent inline" href="login.html">შესვლა</a>
+            </div>
+            <div class="profile-wrap reveal visible" id="profileContent">
+                <div class="profile-card">
+                    <img src="https://via.placeholder.com/180x180/1f1f1f/c9a44a?text=Noire" alt="პროფილის ფოტო" id="profileAvatar">
+                    <h3 id="profileName">სტუმარი მომხმარებელი</h3>
+                    <p id="profileEmail">რეგისტრაცია გაიარე პროფილის პერსონალიზაციისთვის.</p>
+                    <dl class="account-details">
+                        <div>
+                            <dt>სრული სახელი</dt>
+                            <dd id="profileDetailName">-</dd>
+                        </div>
+                        <div>
+                            <dt>ტელეფონი</dt>
+                            <dd id="profileDetailPhone">-</dd>
+                        </div>
+                        <div>
+                            <dt>წევრობიდან</dt>
+                            <dd id="profileDetailCreated">-</dd>
+                        </div>
+                    </dl>
+                </div>
+                <form class="card-form" id="profileForm">
+                    <div class="form-grid single">
+                        <label>
+                            მომხმარებლის სახელის შეცვლა
+                            <input type="text" id="profileUsername" placeholder="ახალი მომხმარებლის სახელი" autocomplete="username">
+                        </label>
+                        <label>
+                            სრული სახელი
+                            <input type="text" id="profileFullName" placeholder="სრული სახელი" autocomplete="name">
+                        </label>
+                        <label>
+                            ელ-ფოსტა
+                            <input type="email" id="profileEmailInput" placeholder="you@email.com" autocomplete="email">
+                        </label>
+                        <label>
+                            ტელეფონი
+                            <input type="tel" id="profilePhone" placeholder="+995 5XX XX XX XX" autocomplete="tel">
+                        </label>
+                        <label>
+                            პროფილის ფოტოს ატვირთვა
+                            <input type="file" id="profileImage" accept="image/*">
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-accent full">პროფილის განახლება</button>
+                    <p class="status" id="profileStatus"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="scrypt.js"></script>
+</body>
+</html>

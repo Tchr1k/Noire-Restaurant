@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>შესვლა | Noire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700&family=Noto+Serif+Georgian:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login">
+    <header class="header" id="header">
+        <div class="container nav-shell">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-utensils"></i>
+                <span>Noire</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="მენიუს გახსნა" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html#home" class="nav-link">მთავარი</a>
+                <a href="index.html#reservation" class="nav-link">დაჯავშნა</a>
+                <a href="login.html" class="nav-link active">შესვლა</a>
+                <a href="register.html" class="nav-link">რეგისტრაცია</a>
+                <a href="profile.html" class="nav-link">პროფილი</a>
+                <div class="nav-auth">
+                    <a href="login.html" class="nav-auth-link" data-auth-guest>შესვლა</a>
+                    <a href="register.html" class="nav-auth-link" data-auth-guest>რეგისტრაცია</a>
+                    <a href="profile.html" class="user-mini" data-user-chip hidden>
+                        <img src="https://via.placeholder.com/80x80/1f1f1f/c9a44a?text=N" alt="მომხმარებელი" data-user-chip-img>
+                        <span data-user-chip-name>მომხმარებელი</span>
+                    </a>
+                    <button class="nav-auth-link logout-link" data-logout hidden>გასვლა</button>
+                </div>
+            </nav>
+            <button class="nav-overlay" id="navOverlay" aria-label="მენიუს დახურვა"></button>
+        </div>
+    </header>
+
+    <main class="auth-main section">
+        <div class="container auth-container">
+            <div class="section-head reveal visible">
+                <p class="eyebrow">ავტორიზაცია</p>
+                <h2>შედი შენს ანგარიშში</h2>
+            </div>
+            <form class="card-form reveal visible" id="loginForm">
+                <div class="form-grid single">
+                    <label>
+                        ელ-ფოსტა
+                        <input type="email" id="loginEmail" required placeholder="you@email.com" autocomplete="email">
+                    </label>
+                    <label>
+                        პაროლი
+                        <input type="password" id="loginPassword" required placeholder="შეიყვანე პაროლი" autocomplete="current-password">
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-accent full">შესვლა</button>
+                <p class="status" id="loginStatus"></p>
+                <p class="auth-switch">ანგარიში არ გაქვს? <a href="register.html">რეგისტრაცია</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script src="scrypt.js"></script>
+</body>
+</html>
